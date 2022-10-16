@@ -6,7 +6,9 @@ describe 'Command::Dryrun#execute' do
     parse_option = {
       input: File.expand_path("#{File.dirname(__FILE__)}/../fixtures/#{dsl_path}")
     }
-    Convergence::Command::Dryrun.new(parse_option, config: mysql_settings).execute
+    result = Convergence::Command::Dryrun.new(parse_option, config: mysql_settings).execute
+    pp result # for debug
+    result
   end
 
   describe 'change table options' do
